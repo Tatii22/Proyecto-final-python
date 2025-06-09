@@ -127,7 +127,8 @@ def comprarBoletos(lista):
 
 # Diccionario principal
 loteria = {
-    "boletos": []
+    "boletos": [],
+    "ganadores" : []
 }
 
 
@@ -139,17 +140,4 @@ opcionesPrecio = """
         ( T   )     /
         (((^_(((/(((_/
 ·······························
-:  _   _   _   _   _   _   _  :
-: / \ / \ / \ / \ / \ / \ / \ :
-:( B | o | l | e | t | o | s ):
-: \_/ \_/ \_/ \_/ \_/ \_/ \_/ :
-·······························
-
-Elige la cantidad de boletos que deseas comprar:
-
-1. Boletos de 1.000
-2. Boletos de 2.000
-3. Boletos de 5.000
-4. Boletos de 10.000
-5. Boletos de 20.000
 """
