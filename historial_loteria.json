@@ -1,0 +1,50 @@
+[
+    {
+        "fecha": "2025-06-10",
+        "ganadores": [
+            24,
+            31,
+            40,
+            8,
+            4,
+            21
+        ],
+        "resultados": [
+            {
+                "nombre": "juan",
+                "boletos": [
+                    {
+                        "numeros": [
+                            33,
+                            2,
+                            36,
+                            19,
+                            13,
+                            30
+                        ],
+                        "valor": 1000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            3,
+                            26,
+                            14,
+                            29,
+                            27,
+                            39
+                        ],
+                        "valor": 1000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    }
+                ]
+            }
+        ]
+    }
+]

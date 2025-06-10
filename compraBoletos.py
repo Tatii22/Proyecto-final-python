@@ -136,7 +136,7 @@ def comprarBoletos(lista):
 
     loteria["boletos"].append(nuevoUsuario)
     print("✅ Datos registrados correctamente.")
-    print(loteria)
+    print("-------------------------------------")
 
 
 # Diccionario principal

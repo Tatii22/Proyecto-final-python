@@ -2,6 +2,7 @@ import random
 import compraBoletos 
 from premios import calcularPremio, obtenerCategoria
 from datetime import datetime
+import historial
 
 def generarAleatoriosganador():
     numganadores = random.sample(range(1, 49), 6) 
@@ -9,13 +10,14 @@ def generarAleatoriosganador():
 
 def evaluarBoletos(loteria: dict):
     if not loteria["ganadores"]:
-        print("⚠️ No hay sorteo realizado aún.")
+        print("​⚠️ No hay sorteo realizado aún.")
         return
 
     listaGanadora = loteria["ganadores"][0]
-    print(f"🎯 Números ganadores generados: {listaGanadora}")
+    print(f"✨​ Números ganadores generados: {listaGanadora}")
     
-    fecha = datetime.now().isoformat()
+    fecha = datetime.now().strftime("%Y-%m-%d")
+
     resultadoHistorial = []
 
     for participante in loteria["boletos"]:
@@ -54,14 +56,14 @@ def evaluarBoletos(loteria: dict):
         }
         resultadoHistorial.append(cliente_resultado)
 
-    # Guardamos en el historial del sorteo
+
     sorteo = {
         "fecha": fecha,
         "ganadores": listaGanadora,
         "resultados": resultadoHistorial
     }
     loteria["historial"].append(sorteo)
-
-# Llamadas para ejecutar
+    historial.guardarHistorial(loteria["historial"], 'historial_loteria.json')
+    print("📜 Historial actualizado y guardado en 'historial_loteria.json'.")
 generarAleatoriosganador()
 evaluarBoletos(compraBoletos.loteria)
