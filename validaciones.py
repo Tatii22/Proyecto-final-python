@@ -1,0 +1,1 @@
+  # Funciones auxiliares (validaciones, inputs, etc)

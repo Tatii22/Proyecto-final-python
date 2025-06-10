@@ -1,3 +1,5 @@
+import random
+
 def enterParaContinuar(mensaje: str = "Enter para continuar..."):
     input(mensaje)
 
@@ -59,8 +61,9 @@ def validarInput(titulo : str, valMin: int = 0, valMax: int = 5):
         except:
             enterParaContinuar("OIGA ESTA MAL, INTENTALO DE NUEVO")
 
+
 def seleccionBoletos(dineroDisponible):
-    boletosComprados = {}
+    boletosComprados = []
     dineroRestante = dineroDisponible
 
     while dineroRestante >= 1000:
@@ -71,7 +74,7 @@ def seleccionBoletos(dineroDisponible):
             if cantidad > 0:
                 opcionesMenu.append(precio)
 
-        print(f"\n💰 Saldo restante: ${dineroRestante}")
+        #print(f"\n💰 Saldo restante: ${dineroRestante}")
 
         print("🎟️ Puedes comprar:")
         for precio in opcionesMenu:
@@ -86,21 +89,31 @@ def seleccionBoletos(dineroDisponible):
         maxCantidad = opcionesDisponibles[precioSeleccionado]
 
         cantidad = validarInput(f"¿Cuántos boletos de ${precioSeleccionado} deseas comprar?\n→ ", 1, maxCantidad)
-
-        # Registrar la compra
-        if precioSeleccionado in boletosComprados:
-            boletosComprados[precioSeleccionado] += cantidad
-        else:
-            boletosComprados[precioSeleccionado] = cantidad
+        for _ in range(cantidad):
+            boleto = {
+                "valor": precioSeleccionado,
+                "numeros": random.sample(range(1, 49), 6)
+            }   
+            boletosComprados.append(boleto)
 
         dineroRestante -= precioSeleccionado * cantidad
 
         print(f"✅ Has comprado {cantidad} boletos de ${precioSeleccionado}.")
         print(f"💸 Te queda: ${dineroRestante}")
+        print("")
 
+    total = len(boletosComprados)
+    print(f"🎫 Total de boletos comprados: {total}")
     print("\n🧾 Resumen de boletos comprados:")
-    for precio, cantidad in boletosComprados.items():
-        print(f" - {cantidad} boleto(s) de ${precio}")
+    print("┌──────────────┬───────────────────────────────┐")
+    print("│   Valor 💵   │       Números 🎲              │")
+    print("├──────────────┼───────────────────────────────┤")
+
+    for boleto in boletosComprados:
+        numeros = ", ".join(f"{n:02}" for n in boleto["numeros"])
+        print(f"│   ${boleto['valor']:<8}  │  {numeros:<29}│")
+
+    print("└──────────────┴───────────────────────────────┘")
 
     return boletosComprados
 
@@ -123,21 +136,16 @@ def comprarBoletos(lista):
 
     loteria["boletos"].append(nuevoUsuario)
     print("✅ Datos registrados correctamente.")
-    print(loteria["boletos"])
+    print(loteria)
+
 
 # Diccionario principal
 loteria = {
     "boletos": [],
-    "ganadores" : []
+    "ganadores" : [],
+    "historial" : []
 }
 
 
 comprarBoletos(loteria["boletos"])
 
-opcionesPrecio = """
-        |\__/,|   (`\
-        |_ _  |.--.) )
-        ( T   )     /
-        (((^_(((/(((_/
-·······························
-"""

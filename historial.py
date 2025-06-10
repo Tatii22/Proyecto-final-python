@@ -1,0 +1,1 @@
+ # Cargar y guardar datos en JSON (historial)

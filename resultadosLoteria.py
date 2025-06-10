@@ -1,18 +1,67 @@
 import random
 import compraBoletos 
-
+from premios import calcularPremio, obtenerCategoria
+from datetime import datetime
 
 def generarAleatoriosganador():
-    numganadores = []
-    for i in range(6):
-        num = random.randint(0, 9)
-        numganadores.append(num)
-    compraBoletos.loteria["ganadores"]. append(numganadores)
-    print(f"Numeros ganadores: {numganadores}")
+    numganadores = random.sample(range(1, 49), 6) 
+    compraBoletos.loteria["ganadores"].append(numganadores) 
 
-def generarAleatorios():
+def evaluarBoletos(loteria: dict):
+    if not loteria["ganadores"]:
+        print("⚠️ No hay sorteo realizado aún.")
+        return
+
+    listaGanadora = loteria["ganadores"][0]
+    print(f"🎯 Números ganadores generados: {listaGanadora}")
     
-    pass
+    fecha = datetime.now().isoformat()
+    resultadoHistorial = []
 
+    for participante in loteria["boletos"]:
+        print(f"👤 Participante: {participante['nombre']}")
+        boletos_resultado = []
+
+        for boleto in participante["boletos"]:
+            numeros = boleto["numeros"]
+            valor = boleto["valor"]
+            aciertos = set(numeros) & set(listaGanadora)
+            cantidad_aciertos = len(aciertos)
+            premio = calcularPremio(valor, cantidad_aciertos)
+            categoria = obtenerCategoria(cantidad_aciertos)
+
+            print(f"🎟️  Boleto de ${valor} con números {numeros}")
+            print(f"➤ Aciertos: {cantidad_aciertos} → {sorted(aciertos)}")
+
+            if premio > 0:
+                print(f"🏅 Categoría: {categoria}")
+                print(f"🏆 ¡Premio ganado!: ${premio}\n")
+            else:
+                print("🎲 No ganó premio.\n")
+
+            boletos_resultado.append({
+                "numeros": numeros,
+                "valor": valor,
+                "aciertos": sorted(aciertos),
+                "cantidad_aciertos": cantidad_aciertos,
+                "premio": premio,
+                "categoria": categoria
+            })
+
+        cliente_resultado = {
+            "nombre": participante["nombre"],
+            "boletos": boletos_resultado
+        }
+        resultadoHistorial.append(cliente_resultado)
+
+    # Guardamos en el historial del sorteo
+    sorteo = {
+        "fecha": fecha,
+        "ganadores": listaGanadora,
+        "resultados": resultadoHistorial
+    }
+    loteria["historial"].append(sorteo)
+
+# Llamadas para ejecutar
 generarAleatoriosganador()
-
+evaluarBoletos(compraBoletos.loteria)
