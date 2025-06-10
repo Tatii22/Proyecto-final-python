@@ -6,11 +6,11 @@ import resultadosLoteria
 from historial import cargarHistorial, guardarHistorial, agregarMensaje, mostrarHistorial
 
 opcionesPrecio = """
-        |\__/,|   (`\
-        |_ _  |.--.) )
-        ( T   )     /
-        (((^_(((/(((_/
-·······························
+                        |\__/,|   (`\\
+                        |_ _  |.--.) )
+                        ( T   )     /
+                        (((^_(((/(((_/
+·································································
  _                            _          ______  _             
 | |           _              (_)        |  ___ \(_)            
 | |      ___ | |_  ____  ____ _  ____   | | _ | |_  ____ _   _ 
