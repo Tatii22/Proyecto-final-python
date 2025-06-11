@@ -2,7 +2,7 @@ import random
 import compraBoletos 
 from premios import calcularPremio, obtenerCategoria
 from datetime import datetime
-import historial
+from historial import guardarHistorialLoteria, cargarHistorialLoteria, mostrarHistorialLoteria
 
 def generarAleatoriosganador():
     numganadores = random.sample(range(1, 49), 6) 
@@ -10,19 +10,18 @@ def generarAleatoriosganador():
 
 def evaluarBoletos(loteria: dict):
     if not loteria["ganadores"]:
-        print("​⚠️ No hay sorteo realizado aún.")
+        print("⚠️😿 No hay sorteo realizado aún.")
         return
 
     listaGanadora = loteria["ganadores"][0]
-    print(f"✨​ Números ganadores generados: {listaGanadora}")
+    print(f"✨😸 Números ganadores de la Loteria Miau: {listaGanadora}")
     
     fecha = datetime.now().strftime("%Y-%m-%d")
-
     resultadoHistorial = []
 
     for participante in loteria["boletos"]:
-        print(f"👤 Participante: {participante['nombre']}")
-        boletos_resultado = []
+        print(f"🐈 Participante: {participante['nombre']}")
+        boletosResultado = []
 
         for boleto in participante["boletos"]:
             numeros = boleto["numeros"]
@@ -32,16 +31,16 @@ def evaluarBoletos(loteria: dict):
             premio = calcularPremio(valor, cantidad_aciertos)
             categoria = obtenerCategoria(cantidad_aciertos)
 
-            print(f"🎟️  Boleto de ${valor} con números {numeros}")
+            print(f"🎟️🐱  Boleto de ${valor} con números {numeros}")
             print(f"➤ Aciertos: {cantidad_aciertos} → {sorted(aciertos)}")
 
             if premio > 0:
-                print(f"🏅 Categoría: {categoria}")
-                print(f"🏆 ¡Premio ganado!: ${premio}\n")
+                print(f"📲 Categoría: {categoria}")
+                print(f"🤑😸 ¡Premio ganado!: ${premio}\n")
             else:
-                print("🎲 No ganó premio.\n")
+                print("😿 No ganó premio.\n")
 
-            boletos_resultado.append({
+            boletosResultado.append({
                 "numeros": numeros,
                 "valor": valor,
                 "aciertos": sorted(aciertos),
@@ -50,20 +49,29 @@ def evaluarBoletos(loteria: dict):
                 "categoria": categoria
             })
 
-        cliente_resultado = {
+        clienteResultado = {
             "nombre": participante["nombre"],
-            "boletos": boletos_resultado
+            "boletos": boletosResultado
         }
-        resultadoHistorial.append(cliente_resultado)
-
+        resultadoHistorial.append(clienteResultado)
 
     sorteo = {
         "fecha": fecha,
         "ganadores": listaGanadora,
         "resultados": resultadoHistorial
     }
-    loteria["historial"].append(sorteo)
-    historial.guardarHistorial(loteria["historial"], 'historial_loteria.json')
-    print("📜 Historial actualizado y guardado en 'historial_loteria.json'.")
-generarAleatoriosganador()
-evaluarBoletos(compraBoletos.loteria)
+
+  
+    historial_existente = cargarHistorialLoteria()
+    historial_existente.append(sorteo)
+
+ 
+    guardarHistorialLoteria(historial_existente)
+    
+    print("📜🐈‍ Historial actualizado y guardado.")
+if __name__ == "__main__":
+    historial = cargarHistorialLoteria()
+    mostrarHistorialLoteria(historial)
+    generarAleatoriosganador()
+    evaluarBoletos(compraBoletos.loteria)
+

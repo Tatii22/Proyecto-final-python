@@ -1,11 +1,8 @@
-
-import resultadosLoteria, premios
-import historial
-import comprarBoletos
+import compraBoletos
 import resultadosLoteria
-from historial import cargarHistorial, guardarHistorial, agregarMensaje, mostrarHistorial
+from historial import mostrarHistorialLoteria, cargarHistorialLoteria
 
-opcionesPrecio = """
+opcionesMenu = """
                         |\__/,|   (`\\
                         |_ _  |.--.) )
                         ( T   )     /
@@ -18,8 +15,35 @@ opcionesPrecio = """
 | |____| |_| | |_( (/ /| |   | ( ( | |  | || || | ( ( | | |_| |
 |_______)___/ \___)____)_|   |_|\_||_|  |_||_||_|_|\_||_|\____|
 
-        Seleccione una opción:
-1. Comprar boletos
-2. Ver historial de mensajes
-3. Salir
+Seleccione una opción:
+1. Comprar boletos 🤑😸
+2. Realizar sorteo y mostrar resultados 🎰😼
+3. Ver historial de sorteos 📄🙀
+4. Salir 📤😿
 """
+
+def menu():
+    while True:
+        print(opcionesMenu)
+        opcion = input("Ingrese el número de su elección: ")
+
+        if opcion == '1':
+            compraBoletos.comprarBoletos(compraBoletos.loteria["boletos"])
+
+        elif opcion == '2':
+            resultadosLoteria.generarAleatoriosganador()
+            resultadosLoteria.evaluarBoletos(compraBoletos.loteria)
+
+        elif opcion == '3':
+            historial = cargarHistorialLoteria()
+            mostrarHistorialLoteria(historial)
+
+        elif opcion == '4':
+            print("👋😽 ¡Gracias por usar la Lotería Virtual Miau! Hasta luego.")
+            break
+
+        else:
+            print("😾 Opción no válida. Intente de nuevo.")
+
+if __name__ == "__main__":
+    menu()

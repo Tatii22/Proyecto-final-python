@@ -1,0 +1,360 @@
+[
+    {
+        "fecha": "2025-06-10",
+        "ganadores": [
+            27,
+            26,
+            13,
+            42,
+            31,
+            20
+        ],
+        "resultados": [
+            {
+                "nombre": "Tatiana",
+                "boletos": [
+                    {
+                        "numeros": [
+                            31,
+                            18,
+                            7,
+                            37,
+                            40,
+                            4
+                        ],
+                        "valor": 5000,
+                        "aciertos": [
+                            31
+                        ],
+                        "cantidad_aciertos": 1,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            37,
+                            31,
+                            48,
+                            11,
+                            15,
+                            13
+                        ],
+                        "valor": 5000,
+                        "aciertos": [
+                            13,
+                            31
+                        ],
+                        "cantidad_aciertos": 2,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            3,
+                            44,
+                            46,
+                            37,
+                            34,
+                            22
+                        ],
+                        "valor": 5000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            29,
+                            14,
+                            1,
+                            4,
+                            23,
+                            17
+                        ],
+                        "valor": 2000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            32,
+                            40,
+                            38,
+                            26,
+                            23,
+                            48
+                        ],
+                        "valor": 2000,
+                        "aciertos": [
+                            26
+                        ],
+                        "cantidad_aciertos": 1,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            23,
+                            24,
+                            48,
+                            5,
+                            12,
+                            36
+                        ],
+                        "valor": 2000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            38,
+                            48,
+                            26,
+                            12,
+                            17,
+                            28
+                        ],
+                        "valor": 2000,
+                        "aciertos": [
+                            26
+                        ],
+                        "cantidad_aciertos": 1,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            18,
+                            30,
+                            43,
+                            4,
+                            42,
+                            16
+                        ],
+                        "valor": 5000,
+                        "aciertos": [
+                            42
+                        ],
+                        "cantidad_aciertos": 1,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            7,
+                            47,
+                            3,
+                            18,
+                            44,
+                            48
+                        ],
+                        "valor": 1000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            34,
+                            48,
+                            3,
+                            2,
+                            21,
+                            5
+                        ],
+                        "valor": 1000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "fecha": "2025-06-10",
+        "ganadores": [
+            27,
+            26,
+            13,
+            42,
+            31,
+            20
+        ],
+        "resultados": [
+            {
+                "nombre": "Tatiana",
+                "boletos": [
+                    {
+                        "numeros": [
+                            31,
+                            18,
+                            7,
+                            37,
+                            40,
+                            4
+                        ],
+                        "valor": 5000,
+                        "aciertos": [
+                            31
+                        ],
+                        "cantidad_aciertos": 1,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            37,
+                            31,
+                            48,
+                            11,
+                            15,
+                            13
+                        ],
+                        "valor": 5000,
+                        "aciertos": [
+                            13,
+                            31
+                        ],
+                        "cantidad_aciertos": 2,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            3,
+                            44,
+                            46,
+                            37,
+                            34,
+                            22
+                        ],
+                        "valor": 5000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            29,
+                            14,
+                            1,
+                            4,
+                            23,
+                            17
+                        ],
+                        "valor": 2000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            32,
+                            40,
+                            38,
+                            26,
+                            23,
+                            48
+                        ],
+                        "valor": 2000,
+                        "aciertos": [
+                            26
+                        ],
+                        "cantidad_aciertos": 1,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            23,
+                            24,
+                            48,
+                            5,
+                            12,
+                            36
+                        ],
+                        "valor": 2000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            38,
+                            48,
+                            26,
+                            12,
+                            17,
+                            28
+                        ],
+                        "valor": 2000,
+                        "aciertos": [
+                            26
+                        ],
+                        "cantidad_aciertos": 1,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            18,
+                            30,
+                            43,
+                            4,
+                            42,
+                            16
+                        ],
+                        "valor": 5000,
+                        "aciertos": [
+                            42
+                        ],
+                        "cantidad_aciertos": 1,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            7,
+                            47,
+                            3,
+                            18,
+                            44,
+                            48
+                        ],
+                        "valor": 1000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    },
+                    {
+                        "numeros": [
+                            34,
+                            48,
+                            3,
+                            2,
+                            21,
+                            5
+                        ],
+                        "valor": 1000,
+                        "aciertos": [],
+                        "cantidad_aciertos": 0,
+                        "premio": 0,
+                        "categoria": "Sin premio"
+                    }
+                ]
+            }
+        ]
+    }
+]
